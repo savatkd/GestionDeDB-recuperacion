@@ -1,0 +1,24 @@
+CREATE OR REPLACE FUNCTION alquiler() RETURNS TRIGGER
+AS 
+$alquiler$
+	DECLARE
+		cantidad int;
+		fechaentregar int = 4;		
+BEGIN 
+select count (*) into cantidad  from cliente where idcliente = new.idcliente;
+select alquiler.idcliente into fechaentregar from alquiler;
+NEW.descuento := NEW.valor /2;
+	if (fechaentregar >= cantidad)
+	then
+	RAISE NOTICE 'Este cliente tiene un descuento del 50%';
+	END if;
+	RETURN new;
+END;
+$alquiler$
+LANGUAGE plpgsql;
+
+create trigger alquiler before insert or update
+on alquiler for EACH ROW
+execute procedure alquiler();
+--INSERTAMOS DATOS PARA VERIFICAR EN EL TRIGGER
+INSERT INTO ALQUILER VALUES(004,002,001,'17/08/2021','25/12/2021',15,15);
