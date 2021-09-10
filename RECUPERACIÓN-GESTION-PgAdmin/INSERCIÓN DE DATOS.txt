@@ -1,0 +1,20 @@
+/*==============================================================*/
+/* INSERTAR DATOS: CLIENTE                                               */
+/*==============================================================*/
+INSERT INTO cliente 
+VALUES (001,'1315400067','EDWIN','RIVADENEIRA','22-11-2021');
+INSERT INTO CLIENTE 
+VALUES (002,'123456789','DANIEL', 'MERO','08-02-2021');
+
+/*==============================================================*/
+/* INSERTAR DATOS: PELICULA                                     */
+/*==============================================================*/ 
+INSERT INTO PELICULA VALUES(001,'NO MANCHES FRIDA',2018);
+INSERT INTO PELICULA VALUES(002,'RAPIDOS Y FURIOS 3',2015);
+INSERT INTO PELICULA VALUES(003,'LA LLORONA',2004);
+	   
+/*==============================================================*/
+/* INSERTAR DATOS: ALQUILER                                     */
+/*==============================================================*/
+INSERT INTO ALQUILER VALUES(001,001,001,'17/10/2021','07/12/2021',20,0.00);
+INSERT INTO ALQUILER VALUES(002,001,002,'19/02/2021','11/05/2021',30,0.00);
