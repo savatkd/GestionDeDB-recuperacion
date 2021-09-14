@@ -10,7 +10,7 @@ select alquiler.idcliente into fechaentregar from alquiler;
 NEW.descuento := NEW.valor /2;
 	if (fechaentregar >= cantidad)
 	then
-	RAISE NOTICE 'Este cliente tiene un descuento del 50%';
+	RAISE NOTICE 'Este cliente tiene un descuento del 50';
 	END if;
 	RETURN new;
 END;
